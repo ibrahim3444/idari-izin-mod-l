@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esenkent GTA PM – İdari İzin Modülü</title>
+
+    <!-- EN ÖNEMLİ KISIM: CSS YOLU DOĞRU -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div id="testModeBadge" class="test-mode-badge hidden">
+        TEST MODU AKTİF
+    </div>
+
+    <!-- ÜST BAŞLIK -->
+    <header class="header">
+        <img src="assets/egm-logo.png" class="egm-logo-header" alt="EGM" />
+        <div class="header-text">
+            <h1>ESENKENT GAZİ TURGUT ASLAN PMA</h1>
+            <h2>İDARİ İZİN TALEP MODÜLÜ</h2>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ANA KART -->
+        <section class="card hero-card">
+
+            <p class="intro-text">
+                Bu modül, idari izin taleplerinin 
+                <span class="vurgulu">adil</span> ve 
+                <span class="vurgulu">şeffaf</span> biçimde toplanması için tasarlanmıştır.
+            </p>
+
+            <p class="highlight">
+                Kura sıralaması sistem tarafından otomatik oluşturulur.
+            </p>
+
+            <div class="entry-buttons">
+                <button id="personelGirisiBtn" class="btn entry-btn">
+                    👤 Personel Girişi
+                </button>
+
+                <button id="komutaGirisiBtn" class="btn entry-btn">
+                    🎖️ Komuta Girişi
+                </button>
+            </div>
+
+        </section>
+
+        <!-- BUGÜNÜN KURA SONUÇLARI -->
+        <section class="card">
+            <h3>Bugünün Kura Sonuçları</h3>
+            <p class="section-info">
+                Sadece bugünün kura sıralaması görüntülenir.
+            </p>
+
+            <div id="kuraSonuclariListesi" class="list-block"></div>
+        </section>
+
+        <!-- TALEPLER -->
+        <section class="card">
+            <h3>Talep Eden Personeller</h3>
+            <p class="section-info">
+                Tüm talepler KVKK gereği maskelenerek gösterilir.
+            </p>
+
+            <div id="talepListesi" class="list-block"></div>
+        </section>
+
+        <!-- AÇIKLAMA -->
+        <section class="card disclaimer-card">
+            <h3>Bilgilendirme</h3>
+
+            <p>
+                Bu sistem, idari izin dağılımını kolaylaştıran destekleyici bir modüldür.
+                Kura sıralaması otomatik olarak oluşturulur;
+                <strong>son karar amirliktedir.</strong>
+            </p>
+
+            <p class="small">
+                Sistem tek başına hak doğurmaz.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <span>Sistem Kurucusu:</span>
+            <button id="kurucuGirisBtn" class="link-button">
+                👑 İbrahim Halil ALDEMİR
+            </button>
+        </div>
+    </footer>
+
+    <!-- KURAL MODALI -->
+    <div id="kuralModal" class="modal-backdrop hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Kura Sistemi Kuralları</h3>
+                <button id="kuralModalKapat" class="modal-close-btn">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <ul class="rules-list">
+                    <li>Aynı gün için yalnızca tek talep yapılabilir.</li>
+                    <li>Kura çekildikten sonra aynı gün için talep alınmaz.</li>
+                    <li>Sıralama otomatik hazırlanır, manuel değiştirilmez.</li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button id="kuralModalOnay" class="btn primary full">Anladım</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS DOSYALARI (DOĞRU SIRAYLA) -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
